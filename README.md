@@ -1,62 +1,27 @@
-<img align="center" alt="gif" title="#gif" src="./public/Animation.gif">
-<h1 align="center">Página Pessoal - Fabiana M. Mendes</h1>
-
-<p align="center" >  
-    <a href="#description">Description</a> • 
-    <a href="#status">Status</a> • 
-    <a href="#how to run the app">How to run the App</a> • 
-    <a href="#technologies">Technologies</a> • 
-    <a href="#version">Version</a>
-</p>
+# Carlos Alberto de Freitas Junior
 
 
+<a href="https://www.linkedin.com/in/cafj100/">
+  <code><img alt="My linkedin" width="28" src="https://cdn-icons-png.flaticon.com/512/220/220343.png" /></code>
+</a>
 
-## Description
-A simple React-app with my professional information.
+<a href="https://api.whatsapp.com/send?phone=5581988653582">
+  <code><img alt="My whatsapp" width="28" src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" /></code>
+</a>
 
+<a href="https://app.rocketseat.com.br/me/imcafj">
+  <code><img alt="My Rocketseat" width="28" src="https://cdn-icons-png.flaticon.com/512/166/166340.png" /></code>
+</a>
 
+<a href="mailto:cafj100@gmail.com">
+  <code><img alt="My e-mail" width="32" src="https://cdn-icons-png.flaticon.com/512/747/747314.png" /></code>
+</a>
 
-## Status
- 🚧  Under construction  🚧 
+<a href="https://imcafj.github.io/">
+  <code><img alt="My site" width="32" src="https://cdn-icons-png.flaticon.com/512/617/617273.png" /></code>
+</a>
 
+<br><br><br>
+![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=imcafj&show_icons=true&theme=radical)
+<br><br><br>
 
-
-## How to run the app
-- Open cmd and clone the repository:
-``` $ git clone https://github.com/FabianaMendes/react-portfolio.git ``` 
-- Access project folder in terminal/cmd: 
-``` $ cd react-portfolio ```
-- Install the dependencies:
-``` $ npm install ```
-- To open the project in the code editor: 
-``` $ code . ``` 
-- To run the application locally in your browser:
-``` $ npm start ```
-_The server will automatically start at port:3006 - access [http://localhost:3006](http://localhost:3006)
-To stop the application press Ctrl + c_
-
-
-
-## Technologies
-The following tools were used in the construction of this project:
-
-**Website ([React](https://pt-br.reactjs.org/))**
-- [React Router](https://reactrouter.com/web/guides/quick-start)
-- [React Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html)
-- [React Context.Provider](https://pt-br.reactjs.org/docs/context.html)
-- [FontAwesome Library](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
-- [Remask](https://github.com/brunobertolini/remask)
-- [React Recaptcha](https://www.npmjs.com/package/react-recaptcha)
-- [Axios](https://www.npmjs.com/package/axios)
-
-**Utilities**
-- Prototype: [Figma](https://www.figma.com)
-- Editor: [Visual Studio Code](https://code.visualstudio.com/)
-- Icons: [Font Awesome](https://fontawesome.com)
-- Google Fonts: [Poppins](https://fonts.google.com/specimen/Poppins?query=popp)
-
-
-
-## Version
-<p>Version 1.1</p>
-<p>Updated in: 04/27/2022</p>
