@@ -1,1 +1,71 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/public/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Carlos Alberto Portfolio</title><script defer="defer" src="/static/js/main.4b31aa0f.js"></script><link href="/static/css/main.5ab4e3e7.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EQUIPAMENTOS</title>
+    <link rel="stylesheet" href="/img/styles.css">
+</head>
+<body>
+
+    <!-- Melhor prática: usar apenas um elemento <a> estilizado 
+    <a href="/MAQUINAS/rec-001.html" class="button">REC-001</a>
+    <a href="#" class="button">REC-004</a>
+    <a href="#" class="button">REC-005</a>
+    <a href="#" class="button">REC-006</a> -->
+
+   <div>
+     <!-- Botão principal -->
+     <button class="button" onclick="toggleButtonsREC()">RECICLADORAS</button>
+     <button class="button" onclick="toggleButtonsFR()">FRESADORAS</button>
+     <button class="button" onclick="toggleButtons()">ROLO PNEU</button>
+     <button class="button" onclick="toggleButtons()">ROLO CHAPA</button>
+     <button class="button" onclick="toggleButtons()">ROLO COMPACTADOR DE SOLOS</button>
+
+     <!-- Botões ocultos REC-->
+     <div class="hidden-buttons" id="hiddenButtonsREC">
+         <a href="/MAQUINAS/rec-001.html" class="button">REC-001</a>
+         <a href="/MAQUINAS/rec-004.html" class="button">REC-004</a>
+         <a href="/MAQUINAS/rec-005.html" class="button">REC-005</a>
+         <a href="/MAQUINAS/rec-006.html" class="button">REC-006</a>
+     </div>
+
+     <!-- Botões ocultos FR-->
+     <div class="hidden-buttons" id="hiddenButtonsFR">
+        <a href="/MAQUINAS/fr-004.html" class="button">FR-004</a>
+        <a href="/MAQUINAS/fr-005.html" class="button">FR-005</a>
+        <a href="/MAQUINAS/fr-006.html" class="button">FR-006</a>
+        <a href="/MAQUINAS/fr-008.html" class="button">FR-008</a>
+        <a href="/MAQUINAS/fr-009.html" class="button">FR-009</a>
+        <a href="/MAQUINAS/fr-010.html" class="button">FR-010</a>
+    </div>
+
+    </div>
+
+     <div class="image-container">
+        <img src="/img/logo.webp" alt="Imagem Oval">
+    </div>
+ 
+     <script>
+         // Função para alternar a visibilidade dos botões ocultos
+         function toggleButtonsREC() {
+             const hiddenButtons = document.getElementById('hiddenButtonsREC');
+             if (hiddenButtons.style.display === 'none' || hiddenButtons.style.display === '') {
+                 hiddenButtons.style.display = 'block'; // Mostra os botões
+             } else {
+                 hiddenButtons.style.display = 'none'; // Esconde os botões
+             }
+         }
+
+         function toggleButtonsFR() {
+             const hiddenButtons = document.getElementById('hiddenButtonsFR');
+             if (hiddenButtons.style.display === 'none' || hiddenButtons.style.display === '') {
+                 hiddenButtons.style.display = 'block'; // Mostra os botões
+             } else {
+                 hiddenButtons.style.display = 'none'; // Esconde os botões
+             }
+         }
+     </script>
+
+</body>
+</html>
