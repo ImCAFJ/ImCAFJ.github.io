@@ -1,0 +1,132 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: rgb(245, 179, 58);
+}
+
+/* Estilos gerais para todos os títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold; /* Títulos devem ser destacados */
+    color: #222; /* Cor mais escura para visibilidade */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    line-height: 1.2; /* Altura da linha adequada para leitura */
+}
+
+/* Título principal (h1) - geralmente o maior destaque */
+h1 {
+    font-size: 2.5rem; /* Tamanho grande para destaque */
+    color: #333; /* Pode usar uma cor diferente para destaque */
+    text-transform: uppercase; /* Maiúsculas para dar ênfase */
+    margin-top: 20px;
+}
+
+/* Título secundário (h2) - um pouco menor que o h1 */
+h2 {
+    font-size: 2rem;
+    color: #333; /* Tom mais suave, mas ainda visível */
+    margin-top: 15px;
+}
+
+/* Título terciário (h3) - bom para subtítulos */
+h3 {
+    font-size: 1.75rem;
+    color: #333; /* Cor padrão para manter hierarquia */
+    margin-top: 10px;
+}
+
+/* Títulos menores (h4, h5, h6) - menos proeminentes, mas ainda importantes */
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+    text-transform: uppercase; /* Pode usar maiúsculas para dar ênfase */
+    color: #555;
+}
+
+/* Espaçamento para mobile, ajustando tamanho dos títulos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Botões ocultos*/
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #707780;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.button:hover {
+    background-color: #191b1d;
+}
+
+
+.button {
+    padding: 10px 20px;
+    /*background-color: #007BFF;*/
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button:hover {
+    background-color: #34383d;
+}
+
+/* Inicialmente, os botões ocultos estão invisíveis */
+.hidden-buttons {
+    display: none;
+}
+
+/*---------------------------------------------- imagem centralizada logo------------------------------*/
+/* Centralizando a imagem na tela */
+.body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* background-color: #f5f5f5;  Cor de fundo do corpo */
+    margin: 0;
+}
+
+.image-container {
+    margin-top: 40px;
+    background-color: white;  /*Fundo branco ao redor da imagem */
+    padding: 20px;
+    border-radius: 50%; /* Deixa a borda circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 200px; /* Largura da imagem */
+    height:200px; /* Altura da imagem */
+    object-fit: contain; /* Garante que a imagem ocupe o espaço */
+    border-radius: 50%; /* Deixa a imagem oval */
+}
+
