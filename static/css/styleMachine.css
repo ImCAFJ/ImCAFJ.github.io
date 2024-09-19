@@ -1,0 +1,154 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    min-height: 100vh;
+}
+
+/* Estilizando o header e títulos */
+header h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+header h2 {
+    font-size: 2rem;
+    color: #2980b9;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Estilo para os parágrafos */
+section p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #7f8c8d;
+    max-width: 800px;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito de hover nos parágrafos */
+section p:hover {
+    transform: scale(1.05);
+    background-color: #ecf0f1;
+}
+
+/* Estilo da imagem */
+section img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de hover na imagem */
+section img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo do botão */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #707780;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.button:hover {
+    background-color: #191b1d;
+}
+
+
+.button {
+    padding: 10px 20px;
+    /*background-color: #007BFF;*/
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button:hover {
+    background-color: #34383d;
+}
+
+/* Estilo para H3 e H4 no footer */
+footer h3, footer h4 {
+    margin-top: 20px;
+    color: #34495e;
+    text-align: center;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    section img {
+        width: 100%;
+        height: auto;
+    }
+
+    footer button {
+        width: 100%;
+    }
+}
+
+
+/*OPERADOR*/
+
+.cabeca{
+    display: grid;
+}
+
+.operador, .cliente, .manutencao {
+    background-color: orange;
+    margin: 5px;
+    padding: 15px;
+}
+
+
