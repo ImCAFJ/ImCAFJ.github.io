@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: rgb(245, 179, 58);
+    background-color:grey; /*rgb(245, 179, 58);*/
 }
 
 /* Estilos gerais para todos os títulos */
@@ -67,11 +67,35 @@ h6 {
 }
 
 
+.buttonOP {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom: 20px;
+}
+
+.buttonOP .button {
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    padding:5px 0 0 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 70%;
+    border-radius: 50%; /*Circular */
+    width: 100px; /*Diâmetro do círculo */
+    height: 100px; /*Diâmetro do círculo */
+    line-height: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 /* Botões ocultos*/
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #707780;
+    background-color: orange;/*#707780;*/
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -128,5 +152,19 @@ h6 {
     height:200px; /* Altura da imagem */
     object-fit: contain; /* Garante que a imagem ocupe o espaço */
     border-radius: 50%; /* Deixa a imagem oval */
+}
+
+
+
+/*DAQUI DAQUI*/
+
+
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .hidden-buttons {
+        bottom: 100px;
+        right: 15px;
+    }
 }
 
