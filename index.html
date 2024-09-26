@@ -4,68 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EQUIPAMENTOS</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/img/styles.css">
+    
 </head>
 <body>
 
-    <!-- Melhor prática: usar apenas um elemento <a> estilizado 
-    <a href="/MAQUINAS/rec-001.html" class="button">REC-001</a>
-    <a href="#" class="button">REC-004</a>
-    <a href="#" class="button">REC-005</a>
-    <a href="#" class="button">REC-006</a> -->
+    <div class="buttonOP">
 
-   <div>
-     <!-- Botão principal -->
-     <button class="button" onclick="toggleButtonsREC()">RECICLADORAS</button>
-     <button class="button" onclick="toggleButtonsFR()">FRESADORAS</button>
-     <button class="button" onclick="toggleButtons()">ROLO PNEU</button>
-     <button class="button" onclick="toggleButtons()">ROLO CHAPA</button>
-     <button class="button" onclick="toggleButtons()">ROLO COMPACTADOR DE SOLOS</button>
+         <!-- Botões ocultos OP -->
+         <div class="hidden-buttons" id="hiddenButtonsOP">
+            <a href="/MAQUINAS/dme.html" class="button">ADEILDO <br>DME</a>
+            <a href="/MAQUINAS/uma-008.html" class="button">ADONIAS <br>UMA-008</a>
+            <a href="/MAQUINAS/uma-006.html" class="button">AILTON <br>UMA-006</a>
+            <a href="/MAQUINAS/br-pri.html" class="button">CAIO <br>PRI-SEC</a>
+            <a href="/MAQUINAS/rec-006.html" class="button">DIOGO <br>REC-006</a>
+            <a href="/MAQUINAS/residencia.html" class="button">ERIVALDO <br>FOLGA</a>
+            <a href="/MAQUINAS/dme.html" class="button">FÁBIO<br>DME</a>
+            <a href="/MAQUINAS/rec-004.html" class="button">IVANILDO<br>REC-004</a>
+            <a href="/MAQUINAS/rec-005.html" class="button">JENISSON<br>REC-005</a>
+            <a href="/MAQUINAS/rec-001.html" class="button">RAFAEL<br>REC-001</a>
+            <a href="/MAQUINAS/residencia.html" class="button">MAYCON<br>FÉRIAS</a>
+            <a href="/MAQUINAS/fr-008.html" class="button">PEDRO<br>FR-008</a>
+            <a href="/MAQUINAS/br-pri.html" class="button">SANDRO<br>PRI-SEC</a>
+            <a href="/MAQUINAS/dme.html" class="button">RAMOS<br>DME</a>
+        </div>
+        <button class="button" onclick="toggleButtons('hiddenButtonsOP')">OPERADORES</button>
+    </div>
+    
+    <div>
 
-     <!-- Botões ocultos REC-->
-     <div class="hidden-buttons" id="hiddenButtonsREC">
-         <a href="static/media/rec-001.html" class="button">REC-001</a>
-         <a href="/MAQUINAS/rec-004.html" class="button">REC-004</a>
-         <a href="/MAQUINAS/rec-005.html" class="button">REC-005</a>
-         <a href="/MAQUINAS/rec-006.html" class="button">REC-006</a>
-     </div>
+        <!-- Botões ocultos BR -->
+        <div class="hidden-buttons" id="hiddenButtonsBR">
+            <a href="/MAQUINAS/br-pen.html" class="button">BR-PEN</a>
+            <a href="/MAQUINAS/br-pri.html" class="button">BR-PRI</a>
+            <a href="/MAQUINAS/br-sec.html" class="button">BR-SEC</a>
+        </div>
 
-     <!-- Botões ocultos FR-->
-     <div class="hidden-buttons" id="hiddenButtonsFR">
-        <a href="/MAQUINAS/fr-004.html" class="button">FR-004</a>
-        <a href="/MAQUINAS/fr-005.html" class="button">FR-005</a>
-        <a href="/MAQUINAS/fr-006.html" class="button">FR-006</a>
-        <a href="/MAQUINAS/fr-008.html" class="button">FR-008</a>
-        <a href="/MAQUINAS/fr-009.html" class="button">FR-009</a>
-        <a href="/MAQUINAS/fr-010.html" class="button">FR-010</a>
+        <!-- Botões ocultos REC -->
+        <div class="hidden-buttons" id="hiddenButtonsREC">
+            <a href="/MAQUINAS/rec-001.html" class="button">REC-001</a>
+            <a href="/MAQUINAS/rec-004.html" class="button">REC-004</a>
+            <a href="/MAQUINAS/rec-005.html" class="button">REC-005</a>
+            <a href="/MAQUINAS/rec-006.html" class="button">REC-006</a>
+        </div>
+
+        <!-- Botões ocultos FR -->
+        <div class="hidden-buttons" id="hiddenButtonsFR">
+            <a href="/MAQUINAS/fr-004.html" class="button">FR-004</a>
+            <a href="/MAQUINAS/fr-005.html" class="button">FR-005</a>
+            <a href="/MAQUINAS/fr-006.html" class="button">FR-006</a>
+            <a href="/MAQUINAS/fr-008.html" class="button">FR-008</a>
+            <a href="/MAQUINAS/fr-009.html" class="button">FR-009</a>
+            <a href="/MAQUINAS/fr-010.html" class="button">FR-010</a>
+        </div>
+
+        <!-- Botões ocultos RP -->
+        <div class="hidden-buttons" id="hiddenButtonsRP">
+            <a href="/MAQUINAS/rp-001.html" class="button">RP-001</a>
+            <a href="/MAQUINAS/rp-002.html" class="button">RP-002</a>
+            <a href="/MAQUINAS/rp-003.html" class="button">RP-003</a>
+            <a href="/MAQUINAS/rp-005.html" class="button">RP-005</a>
+        </div>
+
+        <!-- Botões ocultos RDT -->
+        <div class="hidden-buttons" id="hiddenButtonsRDT">
+            <a href="/MAQUINAS/rdt-001.html" class="button">RDT-001</a>
+            <a href="/MAQUINAS/rdt-002.html" class="button">RDT-002</a>
+            <a href="/MAQUINAS/rdt-003.html" class="button">RDT-003</a>
+            <a href="/MAQUINAS/rdt-006.html" class="button">RDT-006</a>
+            <a href="/MAQUINAS/rdt-007.html" class="button">RDT-007</a>
+            <a href="/MAQUINAS/rdt-008.html" class="button">RDT-008</a>
+        </div>
+
+        <!-- Botões principais -->
+        <button class="button" onclick="toggleButtons('hiddenButtonsBR')">BRITADORES</button>
+        <button class="button" onclick="toggleButtons('hiddenButtonsREC')">RECICLADORAS</button>
+        <button class="button" onclick="toggleButtons('hiddenButtonsFR')">FRESADORAS</button>
+        <button class="button" onclick="toggleButtons('hiddenButtonsRP')">ROLO PNEU</button>
+        <button class="button" onclick="toggleButtons('hiddenButtonsRDT')">ROLO DUPLO TANDEM</button><br>
+        <button class="button" onclick="toggleButtons('hiddenButtonsRCC')">ROLO COMPACTADOR COMBINADO</button>
+        <button class="button" onclick="toggleButtons('hiddenButtonsRPC')">ROLO PÉ DE CARNEIRO</button>
+        <button class="button" onclick="toggleButtons('hiddenButtonsUS')">USINAS</button>
+        <button class="button" onclick="toggleButtons('hiddenButtonsDIV')">GERADORES/DIVERSOS</button>
+
+         <!-- Botões ocultos RCC -->
+         <div class="hidden-buttons" id="hiddenButtonsRCC">
+            <a href="/MAQUINAS/rcc-001.html" class="button">RCC-001</a>
+            <a href="/MAQUINAS/rcc-002.html" class="button">RCC-002</a>
+            <a href="/MAQUINAS/rcc-003.html" class="button">RCC-003</a>
+            <a href="/MAQUINAS/rcc-004.html" class="button">RCC-004</a>
+            <a href="/MAQUINAS/rcc-005.html" class="button">RCC-005</a>
+            <a href="/MAQUINAS/rcc-006.html" class="button">RCC-006</a>
+            <a href="/MAQUINAS/rcc-007.html" class="button">RCC-007</a>
+            <a href="/MAQUINAS/rcc-008.html" class="button">RCC-008</a>
+        </div>
+
+        <!-- Botões ocultos RPC -->
+        <div class="hidden-buttons" id="hiddenButtonsRPC">
+            <a href="/MAQUINAS/rpc-005.html" class="button">RPC-005</a>
+            <a href="/MAQUINAS/rpc-006.html" class="button">RPC-006</a>
+            <a href="/MAQUINAS/rpc-010.html" class="button">RPC-010</a>
+            <a href="/MAQUINAS/rpc-015.html" class="button">RPC-015</a>
+        </div>
+
+        <!-- Botões ocultos US -->
+        <div class="hidden-buttons" id="hiddenButtonsUS">
+            <a href="/MAQUINAS/rpc-005.html" class="button">GG-006</a>
+            <a href="/MAQUINAS/rpc-006.html" class="button">GG-008</a>
+            <a href="/MAQUINAS/rpc-010.html" class="button">GG-009</a>
+            <a href="/MAQUINAS/rpc-015.html" class="button">PM-004</a>
+            <a href="/MAQUINAS/rpc-015.html" class="button">TF-001</a>
+        </div>
+
+        <!-- Botões ocultos DIV -->
+        <div class="hidden-buttons" id="hiddenButtonsDIV">
+            <a href="/MAQUINAS/rpc-005.html" class="button">RPC-005</a>
+            <a href="/MAQUINAS/rpc-006.html" class="button">RPC-006</a>
+            <a href="/MAQUINAS/rpc-010.html" class="button">RPC-010</a>
+            <a href="/MAQUINAS/rpc-015.html" class="button">RPC-015</a>
+        </div>
+
+
     </div>
 
-    </div>
-
-     <div class="image-container">
+    <div class="image-container">
         <img src="/img/logo.webp" alt="Imagem Oval">
     </div>
- 
-     <script>
-         // Função para alternar a visibilidade dos botões ocultos
-         function toggleButtonsREC() {
-             const hiddenButtons = document.getElementById('hiddenButtonsREC');
-             if (hiddenButtons.style.display === 'none' || hiddenButtons.style.display === '') {
-                 hiddenButtons.style.display = 'block'; // Mostra os botões
-             } else {
-                 hiddenButtons.style.display = 'none'; // Esconde os botões
-             }
-         }
 
-         function toggleButtonsFR() {
-             const hiddenButtons = document.getElementById('hiddenButtonsFR');
-             if (hiddenButtons.style.display === 'none' || hiddenButtons.style.display === '') {
-                 hiddenButtons.style.display = 'block'; // Mostra os botões
-             } else {
-                 hiddenButtons.style.display = 'none'; // Esconde os botões
-             }
-         }
-     </script>
+    <script>
+        // Função para ocultar todos os grupos de botões
+        function hideAllButtons() {
+            const allHiddenButtons = document.querySelectorAll('.hidden-buttons');
+            allHiddenButtons.forEach(group => {
+                group.style.display = 'none';
+            });
+        }
+
+        // Função para alternar a visibilidade dos botões ocultos
+        function toggleButtons(id) {
+            const hiddenButtons = document.getElementById(id);
+            if (hiddenButtons.style.display === 'block') {
+                hiddenButtons.style.display = 'none'; // Esconde se estiver visível
+            } else {
+                hideAllButtons(); // Primeiro, esconde todos os outros
+                hiddenButtons.style.display = 'block'; // Mostra o grupo clicado
+            }
+        }
+    </script>
 
 </body>
 </html>
