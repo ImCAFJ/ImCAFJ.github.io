@@ -3,7 +3,11 @@ body {
     font-family: 'Arial', sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color:grey; /*rgb(245, 179, 58);*/
+    background-color: rgba(128, 128, 128, 1);/*grey; rgb(245, 179, 58);*/
+    background-image: url(/ASSETS/IMG/DIVERSOS/imagem-de-fundo-convertida.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /* Estilos gerais para todos os títulos */
@@ -66,7 +70,6 @@ h6 {
     }
 }
 
-
 .buttonOP {
     display: flex;
     justify-content: center;
@@ -77,12 +80,13 @@ h6 {
 .buttonOP .button {
     background-color: #ff9800;
     border: none;
-    color: white;
-    padding:5px 0 0 5px;
+    color: #34383d;
+    padding:5px 5px 0 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 70%;
+    font-size: 80%;
+    font-weight: bold;
     border-radius: 50%; /*Circular */
     width: 100px; /*Diâmetro do círculo */
     height: 100px; /*Diâmetro do círculo */
@@ -120,6 +124,10 @@ h6 {
 }
 
 .button-no-hidden:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button-no-hiddenOP:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -194,4 +202,39 @@ h6 {
         right: 15px;
     }
 }
+
+
+/* Define a imagem de fundo */
+/* Estilo para a imagem de fundo */
+.background-image {
+    /*position: relative;*/
+    width: 100%;
+    height: 100vh; /* Faz com que a imagem ocupe toda a altura da viewport */
+    /*background-image: url('/ASSETS/IMG/DIVERSOS/imagem-de-fundo-convertida.jpg');  Caminho para a sua imagem */
+    background-size: cover;  /*Garante que a imagem cubra toda a tela, cortando se necessário */
+    background-position:center;  /*Centraliza a imagem */
+}
+
+
+/* Overlay cinza transparente */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.7); /* Cor cinza com transparência (0.7) */
+    z-index: 1; /* Coloca o overlay acima da imagem */
+}
+
+/* Conteúdo que aparece sobre a imagem e o overlay */
+.content {
+    position: relative;
+    z-index: 2; /* Coloca o conteúdo acima do overlay */
+    color: white; /* Cor do texto */
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza o texto verticalmente */
+}
+
 
