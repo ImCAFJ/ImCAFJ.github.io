@@ -149,6 +149,7 @@ h6 {
 }
 
 .button-no-hiddenOP{
+    box-sizing: border-box;
     background-color: #34383d;
     color: #ff9800;
     border: solid 2px #ff9800;
