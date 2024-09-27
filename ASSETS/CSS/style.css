@@ -104,27 +104,54 @@ h6 {
 
 .button:hover {
     background-color: #191b1d;
+    color: #ff9800;
 }
 
 
 .button {
     padding: 10px 20px;
     /*background-color: #007BFF;*/
-    color: white;
+    color: #34383d;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     margin: 5px;
+    font-weight: bold;
 }
 
-.button:hover {
-    background-color: #34383d;
+.button-no-hidden:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Inicialmente, os botões ocultos estão invisíveis */
 .hidden-buttons {
     display: none;
 }
+
+.button-no-hidden{
+    background-color: #34383d;
+    color: #ff9800;
+    border: solid 2px #ff9800;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.button-no-hiddenOP{
+    background-color: #34383d;
+    color: #ff9800;
+    border: solid 2px #ff9800;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 40%;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
 
 /*---------------------------------------------- imagem centralizada logo------------------------------*/
 /* Centralizando a imagem na tela */
