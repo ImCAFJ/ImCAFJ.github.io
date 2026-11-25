@@ -73,8 +73,61 @@
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const carousel = document.querySelector(".carousel");
+
+    if (!carousel) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener("touchstart", function (event) {
+        touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", function (event) {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const difference = touchStartX - touchEndX;
+
+        if (Math.abs(difference) < 50) return;
+
+        const radios = carousel.querySelectorAll('input[type="radio"]');
+
+        let currentIndex = -1;
+
+        radios.forEach((radio, index) => {
+            if (radio.checked) {
+                currentIndex = index;
+            }
+        });
+
+        if (currentIndex === -1) return;
+
+        if (difference > 0) {
+            // Deslizou para a esquerda: próximo slide
+            currentIndex = (currentIndex + 1) % radios.length;
+        } else {
+            // Deslizou para a direita: slide anterior
+            currentIndex = (currentIndex - 1 + radios.length) % radios.length;
+        }
+
+        radios[currentIndex].checked = true;
+    }
+
+});
+</script>
 </body>
 </html>
+
+ 
 
 
 
