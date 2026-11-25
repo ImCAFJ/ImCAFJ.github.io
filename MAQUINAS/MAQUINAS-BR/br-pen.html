@@ -28,6 +28,7 @@
     <input type="radio" name="carousel" id="slide2">
     <input type="radio" name="carousel" id="slide3">
     <div class="slides">
+      
       <div class="slide">
         <img src="/ASSETS/IMG/IMG-BR/BR-PEN/BR.JPG" alt="Slide 1">
       </div>
@@ -38,11 +39,14 @@
         <img src="/ASSETS/IMG/IMG-BR/BR-PEN/BR002.png" alt="Slide 3">
       </div>
     </div>
-    <div class="navigation">
-      <label for="slide1"></label>
-      <label for="slide2"></label>
-      <label for="slide3"></label>
-    </div>
+
+    <button class="carousel-btn prev" aria-label="Imagem anterior">
+    &#10094;
+</button>
+
+<button class="carousel-btn next" aria-label="Próxima imagem">
+    &#10095;
+</button>
   </div>
 
 <!-- Container para organizar as seções verticalmente -->
@@ -75,52 +79,75 @@
 
 
 <script>
-
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
     const carousel = document.querySelector(".carousel");
 
     if (!carousel) return;
 
+    const radios = carousel.querySelectorAll('input[type="radio"]');
+    const nextButton = carousel.querySelector(".carousel-btn.next");
+    const prevButton = carousel.querySelector(".carousel-btn.prev");
+
+    if (!radios.length) return;
+
     let touchStartX = 0;
-    let touchEndX = 0;
+
+    function getCurrentIndex() {
+        return Array.from(radios).findIndex(radio => radio.checked);
+    }
+
+    function goToSlide(index) {
+        index = (index + radios.length) % radios.length;
+        radios[index].checked = true;
+        restartAutoplay();
+    }
+
+    function nextSlide() {
+        goToSlide(getCurrentIndex() + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(getCurrentIndex() - 1);
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener("click", nextSlide);
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener("click", prevSlide);
+    }
 
     carousel.addEventListener("touchstart", function (event) {
         touchStartX = event.changedTouches[0].screenX;
     }, { passive: true });
 
     carousel.addEventListener("touchend", function (event) {
-        touchEndX = event.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
 
-    function handleSwipe() {
+        const touchEndX = event.changedTouches[0].screenX;
         const difference = touchStartX - touchEndX;
 
         if (Math.abs(difference) < 50) return;
 
-        const radios = carousel.querySelectorAll('input[type="radio"]');
-
-        let currentIndex = -1;
-
-        radios.forEach((radio, index) => {
-            if (radio.checked) {
-                currentIndex = index;
-            }
-        });
-
-        if (currentIndex === -1) return;
-
         if (difference > 0) {
-            // Deslizou para a esquerda: próximo slide
-            currentIndex = (currentIndex + 1) % radios.length;
+            nextSlide();
         } else {
-            // Deslizou para a direita: slide anterior
-            currentIndex = (currentIndex - 1 + radios.length) % radios.length;
+            prevSlide();
         }
 
-        radios[currentIndex].checked = true;
+    }, { passive: true });
+
+    let autoplay;
+
+    function restartAutoplay() {
+        clearInterval(autoplay);
+        autoplay = setInterval(function () {
+            goToSlide(getCurrentIndex() + 1);
+        }, 5000);
     }
+
+    restartAutoplay();
 
 });
 </script>
