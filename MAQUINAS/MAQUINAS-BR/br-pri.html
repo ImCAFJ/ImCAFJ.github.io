@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/ASSETS/IMG/DIVERSOS/logo.webp" />
     <title>BRITADOR PRIMÁRIO</title>
     
     <!-- Seu arquivo CSS -->
@@ -27,8 +28,8 @@
     <input type="radio" name="carousel" id="slide1" checked>
     <input type="radio" name="carousel" id="slide2">
     <input type="radio" name="carousel" id="slide3">
-    <input type="radio" name="carousel" id="slide4">
     <div class="slides">
+
       <div class="slide">
         <img src="/ASSETS/IMG/IMG-BR/BR-PRI/br-pri-1.jpg" alt="Slide 1">
       </div>
@@ -36,19 +37,20 @@
         <img src="/ASSETS/IMG/IMG-BR/BR-PRI/br-pri-2.jpg" alt="Slide 2">
       </div>
       <div class="slide">
-        <img src="/ASSETS/IMG/IMG-BR/BR-PRI/br-pri-3.jpg" alt="Slide 3">
-      </div>
-      <div class="slide">
         <img src="/ASSETS/IMG/IMG-BR/BR-PRI/br-pri-4.jpg" alt="Slide 4">
       </div>
-    </div>
-    <div class="navigation">
-      <label for="slide1"></label>
-      <label for="slide2"></label>
-      <label for="slide3"></label>
-      <label for="slide4"></label>
-    </div>
+
+      </div>
+
+    <button class="carousel-btn prev" aria-label="Imagem anterior">
+    &#10094;
+</button>
+
+<button class="carousel-btn next" aria-label="Próxima imagem">
+    &#10095;
+</button>
   </div>
+   
 
 <!-- Container para organizar as seções verticalmente -->
 <section class="container-sections">
@@ -86,6 +88,80 @@
 
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const carousel = document.querySelector(".carousel");
+
+    if (!carousel) return;
+
+    const radios = carousel.querySelectorAll('input[type="radio"]');
+    const nextButton = carousel.querySelector(".carousel-btn.next");
+    const prevButton = carousel.querySelector(".carousel-btn.prev");
+
+    if (!radios.length) return;
+
+    let touchStartX = 0;
+
+    function getCurrentIndex() {
+        return Array.from(radios).findIndex(radio => radio.checked);
+    }
+
+    function goToSlide(index) {
+        index = (index + radios.length) % radios.length;
+        radios[index].checked = true;
+        restartAutoplay();
+    }
+
+    function nextSlide() {
+        goToSlide(getCurrentIndex() + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(getCurrentIndex() - 1);
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener("click", nextSlide);
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener("click", prevSlide);
+    }
+
+    carousel.addEventListener("touchstart", function (event) {
+        touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", function (event) {
+
+        const touchEndX = event.changedTouches[0].screenX;
+        const difference = touchStartX - touchEndX;
+
+        if (Math.abs(difference) < 50) return;
+
+        if (difference > 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+
+    }, { passive: true });
+
+    let autoplay;
+
+    function restartAutoplay() {
+        clearInterval(autoplay);
+        autoplay = setInterval(function () {
+            goToSlide(getCurrentIndex() + 1);
+        }, 5000);
+    }
+
+    restartAutoplay();
+
+});
+</script>
 
 </body>
 </html>

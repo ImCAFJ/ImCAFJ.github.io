@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/ASSETS/IMG/DIVERSOS/logo.webp" />
+    <title>RECICLADORA 7</title>
+    
+    <!-- Seu arquivo CSS -->
+    <link rel="stylesheet" href="/ASSETS/CSS/styleMachine.CSS">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="body">
+
+<div class="cabeca"> 
+  
+<header>
+    <div><a href="/index.html" class="button">HOME</a></div>
+    <h1 class="title-machine">RECICLADORA DE ASFALTO A FRIO E ESTABILIZADORA DE SOLOS WIRTGEN WR 200</h1>
+</header>
+
+<!-- Carrossel -->
+<div class="carousel">
+    <input type="radio" name="carousel" id="slide1" checked>
+    <input type="radio" name="carousel" id="slide2">
+    <input type="radio" name="carousel" id="slide3">
+    <div class="slides">
+      <div class="slide">
+        <img src="/ASSETS/IMG/REC/REC-007/REC-007-1.png" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="/ASSETS/IMG/REC/REC-007/REC-007-2.png" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="/ASSETS/IMG/REC/REC-007/REC-007-3.png" alt="Slide 3">
+      </div>
+    </div>
+     <button class="carousel-btn prev" aria-label="Imagem anterior">
+    &#10094;
+</button>
+
+<button class="carousel-btn next" aria-label="Próxima imagem">
+    &#10095;
+</button>
+  </div>
+
+<!-- Container para organizar as seções verticalmente -->
+<section class="container-sections">
+    <div class="section operador">
+        <!--<img src="/ASSETS/IMG/DIVERSOS/Logo DME com estrada curva vibrante.png" class="dme-image">
+        <h2>DISPONÍVEL PARA LOCAÇÃO</h2>-->
+        <h2>OPERADOR</h2><br>
+        <img src="/ASSETS/IMG/OPERADOR/DIOGO.png"  class="image-operador-1">
+           <h3>DIOGO DA SILVA <br> <span>DATA DE VIAGEM: 14/06/2026</span></h3>
+    </div>
+
+    <div class="section cliente">
+        
+        <h2>CLIENTE </h2> 
+        <h3> EMPRESA: <span>AGRIMAT</span><br><br>
+             LOCAL: <span>PONTA PORÃ/MS</span><br> <br>
+             CPP:  <span>6713/26</span><br> <br>INÍCIO: <span>28/07/2026</span>
+             <!--DEVOLUÇÃO: <span>06/11/2026</span><br><br>
+             ÚLTIMO OPERADOR: <span style="color:grey;">PAULO</span>--></h3>
+    </div>
+
+    <div class="section manutencao">
+       <h2>MANUTENÇÃO</h2>
+          <h3>ÚLTIMA REVISÃO PREVENTIVA: <span>06/10/2026 - 750h</span> 
+            <br><br>PRÓXIMA REVISÃO PREVENTIVA: <span>1000h - REVISÃO COMPLETA, AGUARDANDO SERVIÇO</span></h3>
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const carousel = document.querySelector(".carousel");
+
+    if (!carousel) return;
+
+    const radios = carousel.querySelectorAll('input[type="radio"]');
+    const nextButton = carousel.querySelector(".carousel-btn.next");
+    const prevButton = carousel.querySelector(".carousel-btn.prev");
+
+    if (!radios.length) return;
+
+    let touchStartX = 0;
+
+    function getCurrentIndex() {
+        return Array.from(radios).findIndex(radio => radio.checked);
+    }
+
+    function goToSlide(index) {
+        index = (index + radios.length) % radios.length;
+        radios[index].checked = true;
+        restartAutoplay();
+    }
+
+    function nextSlide() {
+        goToSlide(getCurrentIndex() + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(getCurrentIndex() - 1);
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener("click", nextSlide);
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener("click", prevSlide);
+    }
+
+    carousel.addEventListener("touchstart", function (event) {
+        touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", function (event) {
+
+        const touchEndX = event.changedTouches[0].screenX;
+        const difference = touchStartX - touchEndX;
+
+        if (Math.abs(difference) < 50) return;
+
+        if (difference > 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+
+    }, { passive: true });
+
+    let autoplay;
+
+    function restartAutoplay() {
+        clearInterval(autoplay);
+        autoplay = setInterval(function () {
+            goToSlide(getCurrentIndex() + 1);
+        }, 5000);
+    }
+
+    restartAutoplay();
+
+});
+</script>
+
+</body>
+</html>
+
+
+
